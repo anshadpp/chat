@@ -8,7 +8,7 @@ import com.example.demo.models.Chat;
 public interface ChatRepository extends JpaRepository<Chat, Long> {
 	
 	
-	@Query(value="Select COUNT(c) > 0 from Chat c where c.senderId = :userId or c.recieverId = :userId")
+	@Query(value="Select COUNT(c) > 0 from Chat c where c.User.userIdId = :userId or c.recieverId = :userId")
 	boolean isExistAnyChatById(Long userId);
 
 }
